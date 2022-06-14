@@ -1,24 +1,22 @@
-import React from 'react'
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript
-} from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-export default class MyDocument extends Document {
-  render(): JSX.Element {
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
+  render() {
     return (
-      <Html lang="pt">
+      <Html>
         <Head>
-          <meta charSet="utf-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-          <link
-            href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
             rel="stylesheet"
           />
-
-          <link rel="icon" href="https://rocketseat.com.br/favicon.ico" />
+          <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />
@@ -28,3 +26,5 @@ export default class MyDocument extends Document {
     )
   }
 }
+
+export default MyDocument

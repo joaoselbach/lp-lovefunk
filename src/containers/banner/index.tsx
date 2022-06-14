@@ -50,7 +50,7 @@ export const Banner = () => {
             textShadow="0px 0px 30px rgba(227, 7, 36, 0.5)"
           >
             Love Funk em
-            <Box ml="-3.5rem" position="absolute" top="12rem" left="32rem">
+            <Box ml="-3.5rem" position="absolute" top="12rem" left="32rem" display={{ base: 'none', m: 'block'}}>
               <Lottie
                 options={defaultOptions}
                 height="100%"
